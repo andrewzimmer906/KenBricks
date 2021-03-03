@@ -5,25 +5,26 @@ using UnityEngine;
 public class KenShapeBlockKit : MonoBehaviour
 {
     public void GenerateModel() {
-        Mesh[] meshes = MeshSplitter.splitMesh(GetComponent<MeshFilter>().sharedMesh);
-        CreateChildObject(GetComponent<MeshFilter>().sharedMesh, GetComponent<MeshRenderer>());
+        MeshWithCenter[] meshes = MeshSplitter.splitMesh(GetComponent<MeshFilter>().sharedMesh);
 
-        /*
-        foreach (MeshFilter filter in filters) {
+        GameObject kit = new GameObject(gameObject.name + "_kit", typeof(MeshRenderer), typeof(MeshFilter));
 
+        MeshRenderer renderer = GetComponent<MeshRenderer>();
+        int i = 1;
+        foreach (MeshWithCenter mesh in meshes) {
+            CreateChildObject(mesh, GetComponent<MeshRenderer>(), kit, i++);
         }
-        */
     }
 
-    private void CreateChildObject(Mesh mesh, MeshRenderer renderer) {
-        GameObject child = new GameObject(gameObject.name + "_sub", typeof(MeshRenderer), typeof(MeshFilter));
+    private void CreateChildObject(MeshWithCenter mesh, MeshRenderer renderer, GameObject parent, int num) {
+        GameObject child = new GameObject(gameObject.name + "_brick" + num, typeof(MeshRenderer), typeof(MeshFilter));
 
         MeshFilter childFilter = child.GetComponent<MeshFilter>();
-        childFilter.sharedMesh = mesh;
+        childFilter.sharedMesh = mesh.mesh;
 
         MeshRenderer childRenderer = child.GetComponent<MeshRenderer>();
         childRenderer.sharedMaterials = renderer.sharedMaterials;
-
-        child.transform.SetParent(gameObject.transform, false);
+        child.transform.SetParent(parent.transform, false);
+        child.transform.position = mesh.center;
     }
 }
