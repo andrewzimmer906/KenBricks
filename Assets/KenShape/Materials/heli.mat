@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Night4
-  m_Shader: {fileID: 4800000, guid: eb3c6fb598ded4c71b8968e1c40a3b4d, type: 3}
-  m_ShaderKeywords: 
+  m_Name: heli
+  m_Shader: {fileID: 4800000, guid: b34d81e35f515f745ae9d9fe89e7a242, type: 3}
+  m_ShaderKeywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -39,11 +39,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
+    - _EmmisTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e7c64a9cc4afd5749a397e2a146023c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -55,37 +63,49 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RampTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _FresnelBrightness: 0
+    - _FresnelPower: 0
+    - _FresnelShadowDropoff: 0
+    - _GlossMapScale: 0
+    - _Glossiness: 15
     - _GlossyReflections: 1
-    - _HorizonLineContribution: 0.309
-    - _HorizonLineExponent: 12.3
+    - _HighIntensity: 1.5
+    - _LightScalar: 1
+    - _LowIntensity: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OutlineDot: 0.25
+    - _OutlineExtrusion: 0
+    - _OutlineSize: 10
     - _Parallax: 0.02
-    - _SkyGradientExponent: 2.5
-    - _SmoothnessTextureChannel: 0
+    - _RampLevels: 2
+    - _RimAlpha: 0
+    - _RimAmount: 0.534
+    - _RimDropOff: 0
+    - _RimPower: 0
+    - _RimThreshold: 0.347
+    - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SunDiscContribution: 1
-    - _SunDiscExponent: 250000
-    - _SunDiscMultiplier: 500
-    - _SunHaloContribution: 0.5
-    - _SunHaloExponent: 500
     - _UVSec: 0
     - _ZWrite: 1
-    - __dirty: 0
     m_Colors:
+    - _AmbientColor: {r: 0.097173005, g: 0.1025546, b: 0.177, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HorizonLineColor: {r: 0.36229897, g: 0.3911907, b: 0.709, a: 1}
-    - _SkyGradientBottom: {r: 0.268917, g: 0.27976832, b: 0.319, a: 0}
-    - _SkyGradientTop: {r: 0.6552, g: 0.67018384, b: 0.84, a: 0}
-    - _SunDiscColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SunHaloColor: {r: 0.04757783, g: 0.8088235, b: 0.7143241, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.20307702, g: 0.2246323, b: 0.433, a: 1}
+    - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
